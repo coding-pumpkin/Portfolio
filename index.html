@@ -769,84 +769,6 @@ section:last-child { border-bottom: none; }
 }
 .project-link:hover { border-color: var(--accent); color: var(--accent); }
 
-/* ── SKILLS ───────────────────────────────────────── */
-#skills { background: var(--paper-warm); }
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.skill-group {
-  background: var(--paper-card);
-  border: 1px solid var(--rule);
-  border-radius: 10px;
-  padding: 1.5rem;
-}
-
-.skill-group-title {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.skill-group-title::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--rule);
-}
-
-.skill-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-.skill-row {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.skill-row-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.skill-name {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--ink-soft);
-}
-
-.skill-level {
-  font-size: 0.7rem;
-  color: var(--ink-muted);
-  font-family: var(--mono);
-}
-
-.skill-bar {
-  height: 4px;
-  background: var(--paper-warm);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.skill-fill {
-  height: 100%;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--accent), #60a5fa);
-  width: 0%;
-  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 /* ── EDUCATION ────────────────────────────────────── */
 .edu-list {
@@ -1071,14 +993,13 @@ section:last-child { border-bottom: none; }
     <a class="nav-link" href="#publications"><i class="fas fa-file-alt"></i> Publications</a>
     <a class="nav-link" href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
     <a class="nav-link" href="#projects"><i class="fas fa-code-branch"></i> Projects</a>
-    <a class="nav-link" href="#skills"><i class="fas fa-layer-group"></i> Skills</a>
     <a class="nav-link" href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
     <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
   </nav>
   <div class="sidebar-footer">
     <a class="sidebar-social" href="mailto:shrinidhissm@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-    <a class="sidebar-social" href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <a class="sidebar-social" href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a class="sidebar-social" href="www.linkedin.com/in/shrinidhi-sridhar-9b6405352" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a class="sidebar-social" href="https://github.com/coding-pumpkin" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
     <a class="sidebar-social" href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
   </div>
 </aside>
@@ -1132,6 +1053,11 @@ section:last-child { border-bottom: none; }
           <div class="news-text">Joined <strong>MIE–SPPU Doha</strong> as Web Management Intern, overseeing institutional web presence. <span class="news-emoji">🌐</span></div>
         </div>
 
+         <div class="news-item">
+          <div class="news-date">June 2024</div>
+          <div class="news-text">Awarded <strong>Student of the Year</strong> in MIE-SPPU by the department for academic excellence. <span class="news-emoji">🏅</span></div>
+        </div>
+
         <div class="news-item">
           <div class="news-date">May 2024</div>
           <div class="news-text">Enrolled in the <strong>BS Data Science & Applications</strong> programme at <a href="https://study.iitm.ac.in/" target="_blank">IIT Madras</a>. <span class="news-emoji">📚</span></div>
@@ -1156,7 +1082,7 @@ section:last-child { border-bottom: none; }
     
     <div class="interest-card fade-in">
       <div class="interest-icon"><i class="fas fa-balance-scale"></i></div>
-      <div class="interest-title">Model Reliability & Calibration</div>
+      <div class="interest-title">Model Reliability</div>
       <div class="interest-desc">
         Studying predictive reliability, calibration, and uncertainty estimation in machine learning models, especially under distribution shift and data degradation.
       </div>
@@ -1229,14 +1155,14 @@ section:last-child { border-bottom: none; }
           <span class="pub-tag">Neural Networks</span>
           <span class="pub-tag">Resource Constraintss</span>
         </div>
-        <div class="pub-links" style="display:flex;gap:0.5rem;margin-top:1rem;flex-wrap:wrap;">
+        <!--<div class="pub-links" style="display:flex;gap:0.5rem;margin-top:1rem;flex-wrap:wrap;">
           <a href="#" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:600;padding:0.35rem 0.85rem;border-radius:5px;text-decoration:none;background:var(--paper-warm);color:var(--ink-soft);border:1.5px solid var(--rule);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--rule)';this.style.color='var(--ink-soft)'">
             <i class="fas fa-file-pdf"></i> Preprint
           </a>
           <a href="#" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:600;padding:0.35rem 0.85rem;border-radius:5px;text-decoration:none;background:var(--paper-warm);color:var(--ink-soft);border:1.5px solid var(--rule);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--rule)';this.style.color='var(--ink-soft)'">
             <i class="fab fa-github"></i> Code
           </a>
-        </div>
+        </div>-->
       </div>
     </div>
 
@@ -1290,14 +1216,14 @@ section:last-child { border-bottom: none; }
     </div>
 
     <div class="exp-item fade-in" style="animation-delay:0.1s">
-      <div class="exp-year">Feb 2026<br>—<br>Present</div>
+      <div class="exp-year">Feb 2026<br>—<br>May 2026</div>
       <div>
         <div class="exp-role">Python Programming Mentor</div>
         <div class="exp-org">IIT Madras Online · Remote</div>
         <ul class="exp-desc">
-          <li>Mentoring undergraduate students in Python programming and data science fundamentals within the IIT Madras BS programme.</li>
-          <li>Designing practice problems and walkthroughs covering algorithms, data structures, and NumPy/Pandas workflows.</li>
-          <li>Providing one-on-one and group mentoring sessions, achieving strong student satisfaction outcomes.</li>
+          <li>Led 6 hours per week of hand-holding Python support sessions, guiding students through hands on problem solving, strengthening core programming and computational thinking skills.</li>
+          <li>Tracked and monitored the student learning progress of 60 undergrad students and provided targeted interventions for struggling students.</li>
+          <li> with instructional staff to improve student performance and engagement.</li>
         </ul>
         <div class="exp-chips">
           <span class="exp-chip">Python</span>
@@ -1315,12 +1241,11 @@ section:last-child { border-bottom: none; }
         <div class="exp-role">Web Management Intern</div>
         <div class="exp-org">MIE–Savitribai Phule Pune University · Doha Campus</div>
         <ul class="exp-desc">
-          <li>Managing university web presence, maintaining content accuracy and accessibility standards.</li>
-          <li>Coordinating with faculty to ensure timely publication of academic events, research news, and announcements.</li>
-          <li>Implementing UI improvements to enhance the student and staff experience on institutional portals.</li>
+          <li>Led the redesign and structural enhancement of the institutional website to to improve usability, enhance functionality, and increase user engagement through a modern, user-friendly interface.</li>
+          <li>Managed regular content updates and announcements on the Institute's official website, alongside coordinated with departments to support timely updates and website maintenance.</li> 
         </ul>
         <div class="exp-chips">
-          <span class="exp-chip">Web Development</span>
+          <span class="exp-chip">Web Management</span>
           <span class="exp-chip">Content Management</span>
           <span class="exp-chip">Designing</span>
         </div>
@@ -1339,7 +1264,7 @@ section:last-child { border-bottom: none; }
 
     <div class="project-card fade-in">
       <div class="project-header">
-        <div class="project-icon"><i class="fas fa-lungs"></i></div>
+        <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
         <div class="project-title">Energy-Aware Android Malware Detection using Deep Learning</div>
       </div>
       <div class="project-body">
@@ -1369,7 +1294,7 @@ section:last-child { border-bottom: none; }
 
     <div class="project-card fade-in" style="animation-delay:0.1s">
       <div class="project-header">
-        <div class="project-icon"><i class="fas fa-microscope"></i></div>
+        <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
         <div class="project-title">GraduGate - A gateway from campus to career</div>
       </div>
       <div class="project-body">
@@ -1391,29 +1316,27 @@ section:last-child { border-bottom: none; }
       <div class="project-footer">
         <span class="project-status-badge completed">Completed</span>
         <div class="project-links">
-          <a class="project-link" href="#" title="GitHub"><i class="fab fa-github"></i></a>
-          <a class="project-report" href="#" title="Report"><i class="fab fa-file-pdf"></i></a>
+          <a class="project-link" href="https://github.com/coding-pumpkin/GraduGate.git" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         </div>
       </div>
     </div>
 
     <div class="project-card fade-in" style="animation-delay:0.2s">
       <div class="project-header">
-        <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
-        <div class="project-title">Clinical NLP: Automated Medical Report Summarisation</div>
+        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="project-title">Understanding Calibration</div>
       </div>
       <div class="project-body">
-        <p class="project-desc">Fine-tuned transformer model for summarising verbose clinical notes into concise, structured discharge summaries aligned with ICD-10 categories.</p>
+        <p class="project-desc">Studying its collapse in Machine Learning Models Under Controlled Data Degradation</p>
         <div class="project-methodology">
           <div class="project-methodology-label">Methodology</div>
-          <div class="project-methodology-text">Instruction fine-tuned BioGPT on MIMIC-III discharge notes using LoRA adapters to reduce memory footprint. Evaluated using ROUGE-L and BERTScore metrics against ground-truth summaries.</div>
+          <div class="project-methodology-text"> Conducted an independent research study on calibration of the different models under controlled data degradation and distribution shifts, analyzing the behavior of prediction uncertainty under disturbances.</div>
         </div>
         <div class="project-tech">
-          <span class="tech-badge">Hugging Face</span>
-          <span class="tech-badge">BioGPT</span>
-          <span class="tech-badge">LoRA</span>
-          <span class="tech-badge">MIMIC-III</span>
-          <span class="tech-badge">NLP</span>
+          <span class="tech-badge">TensorFlow</span>
+          <span class="tech-badge">Scikit-learn</span>
+          <span class="tech-badge">Matplotib</span>
+          <span class="tech-badge">Data Analysis</span>
         </div>
       </div>
       <div class="project-footer">
@@ -1421,165 +1344,6 @@ section:last-child { border-bottom: none; }
         <div class="project-links">
           <a class="project-link" href="#" title="GitHub"><i class="fab fa-github"></i></a>
         </div>
-      </div>
-    </div>
-
-    <div class="project-card fade-in" style="animation-delay:0.3s">
-      <div class="project-header">
-        <div class="project-icon"><i class="fas fa-database"></i></div>
-        <div class="project-title">Predictive Modelling for Patient Readmission</div>
-      </div>
-      <div class="project-body">
-        <p class="project-desc">Ensemble ML model predicting 30-day hospital readmission risk from structured EHR data, aiding hospital resource planning and preventive care.</p>
-        <div class="project-methodology">
-          <div class="project-methodology-label">Methodology</div>
-          <div class="project-methodology-text">Feature engineering on MIMIC-IV tabular data. Trained LightGBM, XGBoost, and logistic regression ensemble. Calibrated probabilities with isotonic regression. SHAP analysis used for feature attribution and clinician trust-building.</div>
-        </div>
-        <div class="project-tech">
-          <span class="tech-badge">Python</span>
-          <span class="tech-badge">LightGBM</span>
-          <span class="tech-badge">XGBoost</span>
-          <span class="tech-badge">SHAP</span>
-          <span class="tech-badge">MIMIC-IV</span>
-        </div>
-      </div>
-      <div class="project-footer">
-        <span class="project-status-badge completed">Completed</span>
-        <div class="project-links">
-          <a class="project-link" href="#" title="GitHub"><i class="fab fa-github"></i></a>
-          <a class="project-link" href="#" title="Report"><i class="fas fa-file-pdf"></i></a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-label">Technical Competencies</div>
-  <h2 class="section-title">Skills & Tools</h2>
-  <div class="section-rule"></div>
-  <div class="skills-grid">
-
-    <div class="skill-group fade-in">
-      <div class="skill-group-title">ML & AI</div>
-      <div class="skill-list">
-        <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-name">PyTorch</span><span class="skill-level">Advanced</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-name">TensorFlow / Keras</span><span class="skill-level">Advanced</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-name">Scikit-learn</span><span class="skill-level">Advanced</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-name">Hugging Face</span><span class="skill-level">Intermediate</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="skill-group fade-in" style="animation-delay:0.1s">
-      <div class="skill-group-title">Programming</div>
-      <div class="skill-list">
-        <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-name">Python</span><span class="skill-level">Expert</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-name">NumPy / Pandas</span><span class="skill-level">Advanced</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-name">SQL</span><span class="skill-level">Intermediate</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-name">JavaScript / HTML</span><span class="skill-level">Intermediate</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="68"></div></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="skill-group fade-in" style="animation-delay:0.2s">
-      <div class="skill-group-title">Research & Analysis</div>
-      <div class="skill-list">
-        <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-name">Medical Image Analysis</span><span class="skill-level">Intermediate</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-name">Statistical Modelling</span><span class="skill-level">Intermediate</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-name">Scientific Writing</span><span class="skill-level">Intermediate</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
-        </div>
-        <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-name">Literature Review</span><span class="skill-level">Advanced</span></div>
-          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="section-label">Academic Background</div>
-  <h2 class="section-title">Education</h2>
-  <div class="section-rule"></div>
-  <div class="edu-list">
-
-    <div class="edu-item fade-in">
-      <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-      <div>
-        <div class="edu-degree">BSc Computer Science with Honours & Research (Minor in Data Science)</div>
-        <div class="edu-school">MIE–Savitribai Phule Pune University, Doha Campus</div>
-        <div class="edu-meta">
-          <span class="edu-meta-item"><i class="fas fa-calendar"></i> August 2023 – June 2027</span>
-          <span class="edu-gpa"><i class="fas fa-star"></i> GPA: 9.75 / 10</span>
-        </div>
-        <p style="font-size:0.85rem;color:var(--ink-muted);margin-top:0.75rem;line-height:1.7">
-          Pursuing an Honours track with a dedicated research component. Core coursework covers algorithms, computer vision, machine learning, databases, and software engineering. Minor in Data Science focuses on statistical learning, data visualisation, and applied analytics.
-        </p>
-      </div>
-    </div>
-
-    <div class="edu-item fade-in" style="animation-delay:0.1s">
-      <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-      <div>
-        <div class="edu-degree">Bachelor of Science (BS) in Data Science and Applications</div>
-        <div class="edu-school">Indian Institute of Technology, Madras (Online)</div>
-        <div class="edu-meta">
-          <span class="edu-meta-item"><i class="fas fa-calendar"></i> May 2024 – Present</span>
-          <span class="edu-gpa"><i class="fas fa-star"></i> GPA: 9.25 / 10</span>
-        </div>
-        <p style="font-size:0.85rem;color:var(--ink-muted);margin-top:0.75rem;line-height:1.7">
-          Rigorous online programme offered by one of India's premier technical institutions. Covers mathematics for data science, machine learning theory, deep learning, business analytics, and a capstone research project. Also serves as Python Programming Mentor for this programme.
-        </p>
-      </div>
-    </div>
-
-    <div class="edu-item fade-in" style="animation-delay:0.2s">
-      <div class="edu-icon"><i class="fas fa-school"></i></div>
-      <div>
-        <div class="edu-degree">High School Diploma (CBSE)</div>
-        <div class="edu-school">Birla Public School, Doha, Qatar</div>
-        <div class="edu-meta">
-          <span class="edu-meta-item"><i class="fas fa-calendar"></i> Completed March 2023</span>
-          <span class="edu-gpa"><i class="fas fa-star"></i> Score: 91%</span>
-        </div>
-        <p style="font-size:0.85rem;color:var(--ink-muted);margin-top:0.75rem;line-height:1.7">
-          Studied Physics, Chemistry, Mathematics, Computer Science, and English under the CBSE curriculum. Developed foundational computing and scientific reasoning skills that underpin current research pursuits.
-        </p>
       </div>
     </div>
 
@@ -1604,12 +1368,12 @@ section:last-child { border-bottom: none; }
             <div class="contact-info-value">shrinidhissm@gmail.com</div>
           </div>
         </div>
-        <div class="contact-info-item">
+        <!--<div class="contact-info-item">
           <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
           <div>
             <div class="contact-info-label">Phone</div>
             <div class="contact-info-value">+974 3302 6293</div>
-          </div>
+          </div>-->
         </div>
         <div class="contact-info-item">
           <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
@@ -1618,35 +1382,7 @@ section:last-child { border-bottom: none; }
             <div class="contact-info-value">Doha, Qatar</div>
           </div>
         </div>
-        <div class="contact-info-item">
-          <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
-          <div>
-            <div class="contact-info-label">Response Time</div>
-            <div class="contact-info-value">Usually within 48 hours</div>
-          </div>
-        </div>
       </div>
-    </div>
-    <div class="contact-form-card">
-      <form class="form">
-        <div class="form-group">
-          <label class="form-label">Full Name</label>
-          <input class="form-input" placeholder="Your name" type="text"/>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input class="form-input" placeholder="your@email.com" type="email"/>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Subject</label>
-          <input class="form-input" placeholder="Research collaboration / Opportunity / Other" type="text"/>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Message</label>
-          <textarea class="form-textarea" placeholder="Tell me about your project or inquiry…"></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> Send Message</button>
-      </form>
     </div>
   </div>
 </section>
