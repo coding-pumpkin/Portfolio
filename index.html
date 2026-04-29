@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shrinidhi Sridhar — AI Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+:root {
+  --ink: #0f1117;
+  --ink-soft: #3a3f4b;
+  --ink-muted: #6b7280;
+  --paper: #faf9f6;
+  --paper-warm: #f3f1ec;
+  --paper-card: #ffffff;
+  --rule: #e2ddd6;
+  --accent: #1a56db;
+  --accent-muted: #dbeafe;
+  --gold: #b45309;
+  --gold-muted: #fef3c7;
+  --green: #065f46;
+  --green-muted: #d1fae5;
+  --red: #991b1b;
+  --red-muted: #fee2e2;
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.06);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ── SIDEBAR NAV ─────────────────────────────────── */
+.sidebar {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: 240px;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 0;
+  z-index: 100;
+}
+
+.sidebar-brand {
+  padding: 0 1.75rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-initials {
+  width: 52px; height: 52px;
+  background: var(--accent);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+.sidebar-name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: white;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 0.3rem;
+}
+
+.sidebar-role {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  gap: 0.2rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.2s;
+}
+
+.nav-link i { width: 16px; text-align: center; font-size: 0.78rem; }
+
+.nav-link:hover, .nav-link.active {
+  color: white;
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-link.active { color: #93c5fd; background: rgba(26,86,219,0.2); }
+
+.sidebar-footer {
+  padding: 1.5rem 1.75rem 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: auto;
+  display: flex;
+  gap: 0.9rem;
+}
+
+.sidebar-social {
+  width: 32px; height: 32px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.07);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+.sidebar-social:hover { background: rgba(255,255,255,0.15); color: white; }
+
+/* ── MAIN ────────────────────────────────────────── */
+.main {
+  margin-left: 240px;
+  min-height: 100vh;
+}
+
+/* ── SECTIONS ────────────────────────────────────── */
+section {
+  padding: 5rem 4rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+section:last-child { border-bottom: none; }
+
+.section-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.section-rule {
+  width: 40px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin-bottom: 3rem;
+}
+
+/* ── HERO ────────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--paper);
+  padding: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 55%;
+  height: 140%;
+  background: radial-gradient(ellipse at center, #dbeafe 0%, transparent 70%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 5rem;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge {
+  background: var(--accent-muted);
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(26,86,219,0.2);
+}
+
+.hero-name {
+  font-family: var(--serif);
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 1.75rem;
+  font-weight: 400;
+}
+
+.hero-bio {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.8;
+  max-width: 560px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.hero-meta-item i { color: var(--accent); font-size: 0.8rem; }
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  font-family: var(--sans);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 2px 8px rgba(26,86,219,0.3);
+}
+.btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(26,86,219,0.35); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--rule);
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+/* News card */
+.news-card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  max-height: 520px;
+}
+
+.news-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+  flex-shrink: 0;
+}
+
+.news-card-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.news-card-title i { color: var(--accent); font-size: 0.85rem; }
+
+.news-live-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  display: inline-block;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0.85rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+  transition: background 0.15s;
+}
+.news-item:last-child { border-bottom: none; }
+.news-item:hover { background: var(--paper-warm); margin: 0 -0.5rem; padding: 1rem 0.5rem; border-radius: 6px; }
+
+.news-date {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--ink-muted);
+  line-height: 1.4;
+  padding-top: 0.1rem;
+  white-space: nowrap;
+}
+
+.news-text {
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.news-text a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent);
+}
+.news-text a:hover { border-bottom-style: solid; }
+
+.news-emoji { margin-left: 0.2rem; }
+
+/* ── RESEARCH INTERESTS ───────────────────────────── */
+#research-interests {
+  background: var(--paper-warm);
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.interest-card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.75rem;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.interest-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.25s;
+  transform-origin: left;
+}
+.interest-card:hover::before { transform: scaleX(1); }
+.interest-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+.interest-icon {
+  width: 42px; height: 42px;
+  border-radius: 8px;
+  background: var(--accent-muted);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.interest-title {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.interest-desc {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  line-height: 1.65;
+}
+
+/* ── RESEARCH / PUBLICATIONS ──────────────────────── */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pub-item {
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.75rem 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  transition: box-shadow 0.2s;
+}
+
+.pub-item:hover { box-shadow: var(--shadow-md); }
+
+.pub-number {
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--accent);
+  padding-top: 0.15rem;
+  width: 28px;
+  text-align: right;
+}
+
+.pub-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  margin-bottom: 0.6rem;
+}
+
+.pub-status.ongoing { background: var(--gold-muted); color: var(--gold); }
+.pub-status.submitted { background: var(--green-muted); color: var(--green); }
+.pub-status.progress { background: var(--accent-muted); color: var(--accent); }
+
+.pub-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.pub-authors {
+  font-size: 0.83rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.4rem;
+}
+
+.pub-authors strong { color: var(--ink-soft); }
+
+.pub-venue {
+  font-style: italic;
+  font-size: 0.83rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.8rem;
+}
+
+.pub-abstract {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  padding: 0.9rem 1rem;
+  background: var(--paper-warm);
+  border-radius: 6px;
+  border-left: 3px solid var(--rule);
+}
+
+.pub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pub-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: var(--paper-warm);
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+}
+
+/* ── EXPERIENCE ───────────────────────────────────── */
+.exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.exp-item {
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.75rem 2rem;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.75rem;
+  align-items: start;
+  transition: box-shadow 0.2s;
+}
+.exp-item:hover { box-shadow: var(--shadow-md); }
+
+.exp-year {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  padding-top: 0.25rem;
+  text-align: right;
+  border-right: 2px solid var(--rule);
+  padding-right: 1.5rem;
+}
+
+.exp-role {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+
+.exp-org {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.9rem;
+}
+
+.exp-desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.exp-desc li {
+  margin-bottom: 0.4rem;
+  padding-left: 0.1rem;
+}
+
+.exp-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.exp-chip {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+  background: var(--accent-muted);
+  color: var(--accent);
+  border: 1px solid rgba(26,86,219,0.15);
+}
+
+/* ── PROJECTS ─────────────────────────────────────── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.project-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+
+.project-header {
+  padding: 1.5rem 1.75rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  background: var(--accent-muted);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.project-title {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.35;
+  flex: 1;
+}
+
+.project-body {
+  padding: 1.25rem 1.75rem;
+}
+
+.project-desc {
+  font-size: 0.87rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.project-methodology {
+  background: var(--paper-warm);
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+.project-methodology-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.project-methodology-text {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.tech-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  font-family: var(--mono);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: var(--paper-warm);
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+}
+
+.project-footer {
+  padding: 1rem 1.75rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-status-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
+.project-status-badge.active { background: var(--green-muted); color: var(--green); }
+.project-status-badge.completed { background: var(--accent-muted); color: var(--accent); }
+
+.project-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project-link {
+  width: 30px; height: 30px;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+.project-link:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── SKILLS ───────────────────────────────────────── */
+#skills { background: var(--paper-warm); }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.skill-group {
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.skill-group-title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.skill-group-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.skill-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.skill-row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+.skill-level {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  font-family: var(--mono);
+}
+
+.skill-bar {
+  height: 4px;
+  background: var(--paper-warm);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), #60a5fa);
+  width: 0%;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── EDUCATION ────────────────────────────────────── */
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.edu-item {
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.75rem 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.edu-icon {
+  width: 48px; height: 48px;
+  border-radius: 8px;
+  background: var(--accent-muted);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.edu-degree {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  line-height: 1.35;
+}
+
+.edu-school {
+  font-size: 0.88rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.edu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.6rem;
+}
+
+.edu-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+.edu-meta-item i { font-size: 0.75rem; color: var(--accent); }
+
+.edu-gpa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--gold-muted);
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
+/* ── CONTACT ──────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  transition: box-shadow 0.2s;
+}
+.contact-info-item:hover { box-shadow: var(--shadow-sm); }
+
+.contact-info-icon {
+  width: 38px; height: 38px;
+  border-radius: 8px;
+  background: var(--accent-muted);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.contact-info-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--ink-muted);
+  margin-bottom: 0.2rem;
+}
+
+.contact-info-value {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+.contact-form-card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: var(--paper-warm);
+  border: 1.5px solid var(--rule);
+  border-radius: 6px;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-family: var(--sans);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(26,86,219,0.1);
+}
+.form-textarea { min-height: 130px; resize: vertical; }
+
+/* ── ANIMATIONS ──────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { opacity: 0; }
+.fade-in.visible { animation: fadeUp 0.6s ease forwards; }
+
+/* ── MOBILE ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .main { margin-left: 0; }
+  section { padding: 3.5rem 2rem; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-card { display: none; }
+  .interests-grid { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .pub-item { grid-template-columns: 1fr; }
+  .exp-item { grid-template-columns: 1fr; }
+  .edu-item { grid-template-columns: 1fr; }
+
+  /* Mobile nav bar */
+  .mobile-nav {
+    display: flex !important;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--ink);
+    padding: 0.6rem 1rem;
+    justify-content: space-around;
+    z-index: 100;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .mobile-nav a {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 0.2rem; font-size: 0.6rem;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.5); text-decoration: none;
+  }
+  .mobile-nav a i { font-size: 1rem; }
+  .mobile-nav a.active { color: #93c5fd; }
+}
+
+.mobile-nav { display: none; }
+</style>
+</head>
+<body>
+
+<!-- ── SIDEBAR ─────────────────────────────── -->
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <div class="sidebar-initials">S</div>
+    <div class="sidebar-name">Shrinidhi Sridhar</div>
+    <div class="sidebar-role">AI Researcher</div>
+  </div>
+  <nav class="sidebar-nav">
+    <a class="nav-link active" href="#hero"><i class="fas fa-home"></i> Home</a>
+    <a class="nav-link" href="#research-interests"><i class="fas fa-flask"></i> Research</a>
+    <a class="nav-link" href="#publications"><i class="fas fa-file-alt"></i> Publications</a>
+    <a class="nav-link" href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
+    <a class="nav-link" href="#projects"><i class="fas fa-code-branch"></i> Projects</a>
+    <a class="nav-link" href="#skills"><i class="fas fa-layer-group"></i> Skills</a>
+    <a class="nav-link" href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
+    <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+  <div class="sidebar-footer">
+    <a class="sidebar-social" href="mailto:shrinidhissm@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    <a class="sidebar-social" href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a class="sidebar-social" href="#" title="GitHub"><i class="fab fa-github"></i></a>
+    <a class="sidebar-social" href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+  </div>
+</aside>
+
+<!-- ── MAIN CONTENT ────────────────────────── -->
+<main class="main">
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid">
+    <div class="hero-text fade-in">
+      <div class="hero-eyebrow">
+        <span class="hero-badge">Open to Research Collaborations</span>
+      </div>
+      <h1 class="hero-name">Shrinidhi<br>Sridhar</h1>
+      <p class="hero-subtitle">Data Science & AI Researcher</p>
+      <p class="hero-bio">
+        3rd year Undergraduate Student pursuing dual degrees in Computer Science and Data Science, with a strong interest in machine learning research. I am particularly passionate about <strong>machine learning reliability</strong>, <strong>model efficiency</strong>, and <strong>robustness under distribution shift</strong>, with applications in <strong>vision-language models</strong> and <strong>medical imaging</strong>.
+      </p>
+      <div class="hero-meta">
+        <span class="hero-meta-item"><i class="fas fa-map-marker-alt"></i> Doha, Qatar</span>
+        <span class="hero-meta-item"><i class="fas fa-university"></i> QCRI · IIT Madras · SPPU</span>
+        <span class="hero-meta-item"><i class="fas fa-star"></i> GPA 9.75 / 10</span>
+      </div>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#publications"><i class="fas fa-file-alt"></i> View Research</a>
+        <a class="btn btn-outline" href="#contact"><i class="fas fa-envelope"></i> Get in Touch</a>
+      </div>
+    </div>
+    <div class="news-card fade-in" style="animation-delay:0.2s">
+      <div class="news-card-header">
+        <div class="news-card-title">
+          <i class="fas fa-newspaper"></i> Latest News
+        </div>
+        <span class="news-live-dot"></span>
+      </div>
+      <div class="news-list">
+
+        <div class="news-item">
+          <div class="news-date">May 2026</div>
+          <div class="news-text">Started as <strong>AI Research Intern at QCAI</strong> (Qatar Computing Research Institute), working on ML for medical imaging. <span class="news-emoji">🎉</span></div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Feb 2026</div>
+          <div class="news-text">Appointed as <strong>Python Programming Mentor</strong> for the IIT Madras BS Data Science programme. <span class="news-emoji">🧑‍🏫</span></div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Jan 2026</div>
+          <div class="news-text">Joined <strong>MIE–SPPU Doha</strong> as Web Management Intern, overseeing institutional web presence. <span class="news-emoji">🌐</span></div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">May 2024</div>
+          <div class="news-text">Enrolled in the <strong>BS Data Science & Applications</strong> programme at <a href="https://study.iitm.ac.in/" target="_blank">IIT Madras</a>. <span class="news-emoji">📚</span></div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">Aug 2023</div>
+          <div class="news-text">Began <strong>BSc CS (Hons. & Research)</strong> with Minor in Data Science at MIE–SPPU Doha Campus. <span class="news-emoji">🎓</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section id="research-interests">
+  <div class="section-label">Focus Areas</div>
+  <h2 class="section-title">Research Interests</h2>
+  <div class="section-rule"></div>
+  <div class="interests-grid">
+    
+    <div class="interest-card fade-in">
+      <div class="interest-icon"><i class="fas fa-balance-scale"></i></div>
+      <div class="interest-title">Model Reliability & Calibration</div>
+      <div class="interest-desc">
+        Studying predictive reliability, calibration, and uncertainty estimation in machine learning models, especially under distribution shift and data degradation.
+      </div>
+    </div>
+
+    <div class="interest-card fade-in" style="animation-delay:0.1s">
+      <div class="interest-icon"><i class="fas fa-microchip"></i></div>
+      <div class="interest-title">Efficient & Resource-Aware ML</div>
+      <div class="interest-desc">
+        Exploring energy-efficient machine learning, lightweight architectures, and optimization techniques such as quantization for deployment in resource-constrained environments.
+      </div>
+    </div>
+
+    <div class="interest-card fade-in" style="animation-delay:0.2s">
+      <div class="interest-icon"><i class="fas fa-brain"></i></div>
+      <div class="interest-title">Robustness Under Distribution Shift</div>
+      <div class="interest-desc">
+        Investigating how machine learning models behave under noisy, corrupted, or shifted data, and developing methods to improve stability and generalization.
+      </div>
+    </div>
+
+    <div class="interest-card fade-in" style="animation-delay:0.3s">
+      <div class="interest-icon"><i class="fas fa-eye"></i></div>
+      <div class="interest-title">Vision-Language Models</div>
+      <div class="interest-desc">
+        Evaluating and analyzing large vision-language models for real-world tasks, focusing on performance, reliability, and limitations in complex domains.
+      </div>
+    </div>
+
+    <div class="interest-card fade-in" style="animation-delay:0.4s">
+      <div class="interest-icon"><i class="fas fa-x-ray"></i></div>
+      <div class="interest-title">AI in Medical Imaging</div>
+      <div class="interest-desc">
+        Applying machine learning to medical image analysis, including classification and segmentation, with emphasis on evaluation rigor and real-world applicability.
+      </div>
+    </div>
+
+    <div class="interest-card fade-in" style="animation-delay:0.5s">
+      <div class="interest-icon"><i class="fas fa-project-diagram"></i></div>
+      <div class="interest-title">End-to-End ML Systems</div>
+      <div class="interest-desc">
+        Building complete machine learning pipelines, from data processing and modeling to evaluation, with a focus on practical and scalable deployment.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PUBLICATIONS / RESEARCH WORK -->
+<section id="publications">
+  <div class="section-label">Scholarly Work</div>
+  <h2 class="section-title">Publications & Research</h2>
+  <div class="section-rule"></div>
+  <div class="pub-list">
+
+    <div class="pub-item fade-in">
+      <div class="pub-number">[1]</div>
+      <div>
+        <span class="pub-status ongoing"><i class="fas fa-circle" style="font-size:0.5rem"></i> Ongoing</span>
+        <div class="pub-title">Green AI: Balancing Detection Accuracy and Energy Consumption in Android Malware Classification.</div>
+        <div class="pub-authors"><strong>Shrinidhi Sridhar,  Dr. Vikas Malviya</strong></div>
+        <div class="pub-venue">In progress — MIE-SPPU, 2026</div>
+        <div class="pub-abstract">
+            This study investigates the trade-off between detection performance and energy consumption in Android malware classification. Lightweight deep learning models of various flavours are evaluated on the Drebin and TUANDROMD datasets, with all classifiers deployed in TensorFlow Lite (TFLite) format to reflect real-world mobile constraints. A comprehensive evaluation framework using AI Benchmark Pro and Android Studio is employed to measure inference latency and energy consumption. The impact of INT8 quantization on both performance and efficiency is also analyzed. Through systematic experimentation and statistical analysis, the study characterizes accuracy–energy trade-offs and provides insights for designing energy-efficient malware detection systems for resource-constrained Android devices.
+        </div>
+        <div class="pub-tags">
+          <span class="pub-tag">Deep Learning</span>
+          <span class="pub-tag">Statistical Analysis</span>
+          <span class="pub-tag">AI for Cyber Security</span>
+          <span class="pub-tag">Neural Networks</span>
+          <span class="pub-tag">Resource Constraintss</span>
+        </div>
+        <div class="pub-links" style="display:flex;gap:0.5rem;margin-top:1rem;flex-wrap:wrap;">
+          <a href="#" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:600;padding:0.35rem 0.85rem;border-radius:5px;text-decoration:none;background:var(--paper-warm);color:var(--ink-soft);border:1.5px solid var(--rule);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--rule)';this.style.color='var(--ink-soft)'">
+            <i class="fas fa-file-pdf"></i> Preprint
+          </a>
+          <a href="#" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:600;padding:0.35rem 0.85rem;border-radius:5px;text-decoration:none;background:var(--paper-warm);color:var(--ink-soft);border:1.5px solid var(--rule);transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--rule)';this.style.color='var(--ink-soft)'">
+            <i class="fab fa-github"></i> Code
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-item fade-in" style="animation-delay:0.1s">
+      <div class="pub-number">[2]</div>
+      <div>
+        <span class="pub-status progress"><i class="fas fa-circle" style="font-size:0.5rem"></i> In Progress</span>
+        <div class="pub-title">Calibration Collapse Under Distribution Shift: A Study of Predictive Reliability in Machine Learning Models.</div>
+        <div class="pub-authors"><strong>Shrinidhi Sridhar</strong></div>
+        <div class="pub-venue">Research project — 2026</div>
+        <div class="pub-abstract">
+            Machine learning models are typically evaluated using predictive accuracy; however, accuracy alone does not reflect how reliable a model’s confidence estimates are in real-world deployment. In this work, we investigate the behavior of model calibration and predictive uncertainty under controlled data degradation and distribution shift. We conduct a systematic empirical study across multiple model families, including linear models and neural networks of varying complexity, and evaluate their performance under clean and perturbed data conditions. Data degradation is introduced through controlled mechanisms such as input noise, feature corruption, label noise, and distribution shifts, allowing us to analyze how calibration metrics evolve as the data environment becomes increasingly challenging.
+        </div>
+        <div class="pub-tags">
+          <span class="pub-tag">Model Calibration</span>
+          <span class="pub-tag">Data degradation</span>
+          <span class="pub-tag">Reliability of AI Models</span>
+          <span class="pub-tag">Classification Metrics Study</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Professional History</div>
+  <h2 class="section-title">Experience</h2>
+  <div class="section-rule"></div>
+  <div class="exp-list">
+
+    <div class="exp-item fade-in">
+      <div class="exp-year">May 2026<br>—<br>Present</div>
+      <div>
+        <div class="exp-role">AI Research Intern (QCAI)</div>
+        <div class="exp-org">Qatar Computing Research Institute · Doha, Qatar</div>
+        <ul class="exp-desc">
+          <li>Selected for the Qatar Computing Research Institute (QCRI) 2026 Summer Internship Program.</li>
+          <li>Contributing to the project “(QCAI) Comprehensive Benchmarking of Large Vision-Language Models (LVLMs) in Oral Cancer Classification and Segmentation” under the supervision of Dr. Mohamed Elshrif. </li>
+          <li>Engaging in research focused on evaluating and improving AI models for medical imaging applications, with an emphasis on cancer detection and segmentation.</li>
+        </ul>
+        <div class="exp-chips">
+          <span class="exp-chip">LVLMs</span>
+          <span class="exp-chip">Medical Imaging</span>
+          <span class="exp-chip">Machine Learning</span>
+          <span class="exp-chip">Research Methods</span>
+          <span class="exp-chip">Python</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in" style="animation-delay:0.1s">
+      <div class="exp-year">Feb 2026<br>—<br>Present</div>
+      <div>
+        <div class="exp-role">Python Programming Mentor</div>
+        <div class="exp-org">IIT Madras Online · Remote</div>
+        <ul class="exp-desc">
+          <li>Mentoring undergraduate students in Python programming and data science fundamentals within the IIT Madras BS programme.</li>
+          <li>Designing practice problems and walkthroughs covering algorithms, data structures, and NumPy/Pandas workflows.</li>
+          <li>Providing one-on-one and group mentoring sessions, achieving strong student satisfaction outcomes.</li>
+        </ul>
+        <div class="exp-chips">
+          <span class="exp-chip">Python</span>
+          <span class="exp-chip">Data Science</span>
+          <span class="exp-chip">Mentoring</span>
+          <span class="exp-chip">Data Structures</span>
+          <span class="exp-chip">Problem-Solving</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in" style="animation-delay:0.2s">
+      <div class="exp-year">Jan 2026<br>—<br>Present</div>
+      <div>
+        <div class="exp-role">Web Management Intern</div>
+        <div class="exp-org">MIE–Savitribai Phule Pune University · Doha Campus</div>
+        <ul class="exp-desc">
+          <li>Managing university web presence, maintaining content accuracy and accessibility standards.</li>
+          <li>Coordinating with faculty to ensure timely publication of academic events, research news, and announcements.</li>
+          <li>Implementing UI improvements to enhance the student and staff experience on institutional portals.</li>
+        </ul>
+        <div class="exp-chips">
+          <span class="exp-chip">Web Development</span>
+          <span class="exp-chip">Content Management</span>
+          <span class="exp-chip">Designing</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Applied Work</div>
+  <h2 class="section-title">Projects (Engineering & Research)</h2>
+  <div class="section-rule"></div>
+  <div class="projects-grid">
+
+    <div class="project-card fade-in">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-lungs"></i></div>
+        <div class="project-title">Energy-Aware Android Malware Detection using Deep Learning</div>
+      </div>
+      <div class="project-body">
+        <p class="project-desc">Implemented 6 neural network configurations across three architectures (MLP, quantized neural networks) for
+          Android malware classification.</p>
+        <div class="project-methodology">
+          <div class="project-methodology-label">Methodology</div>
+          <div class="project-methodology-text">Using the DREBIN and Tezpur malware datasets, designed experiments comparing model depth (3–5 layers) and evaluated model performance alongside power
+          consumption using the AI Benchmark framework on an Android emulator. Conducted comparative analysis of accuracy–energy trade-offs for mobile malware detection, with experimental
+          results later used in an academic research paper.</div>
+        </div>
+        <div class="project-tech">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">TensorFlow</span>
+          <span class="tech-badge">Android Studio</span>
+          <span class="tech-badge">AI Benchmark App</span>
+          <span class="tech-badge">TensorFlow Lite</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <span class="project-status-badge active">Active Research</span>
+        <div class="project-links">
+          <a class="project-link" href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-in" style="animation-delay:0.1s">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-microscope"></i></div>
+        <div class="project-title">GraduGate - A gateway from campus to career</div>
+      </div>
+      <div class="project-body">
+        <p class="project-desc">Developed a campus placement web application to streamline and digitize institute recruitment workflows.</p>
+        <div class="project-methodology">
+          <div class="project-methodology-label">Methodology</div>
+          <div class="project-methodology-text">Implemented role-based access for students, companies, and placement cells, enabling company approvals,
+              placement drives, applications, and real-time status tracking while eliminating manual spreadsheet/email
+              processes.</div>
+        </div>
+        <div class="project-tech">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">HTML/CSS</span>
+          <span class="tech-badge">Flask</span>
+          <span class="tech-badge">SQLAlchemy</span>
+          <span class="tech-badge">Boostrap</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <span class="project-status-badge completed">Completed</span>
+        <div class="project-links">
+          <a class="project-link" href="#" title="GitHub"><i class="fab fa-github"></i></a>
+          <a class="project-report" href="#" title="Report"><i class="fab fa-file-pdf"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-in" style="animation-delay:0.2s">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
+        <div class="project-title">Clinical NLP: Automated Medical Report Summarisation</div>
+      </div>
+      <div class="project-body">
+        <p class="project-desc">Fine-tuned transformer model for summarising verbose clinical notes into concise, structured discharge summaries aligned with ICD-10 categories.</p>
+        <div class="project-methodology">
+          <div class="project-methodology-label">Methodology</div>
+          <div class="project-methodology-text">Instruction fine-tuned BioGPT on MIMIC-III discharge notes using LoRA adapters to reduce memory footprint. Evaluated using ROUGE-L and BERTScore metrics against ground-truth summaries.</div>
+        </div>
+        <div class="project-tech">
+          <span class="tech-badge">Hugging Face</span>
+          <span class="tech-badge">BioGPT</span>
+          <span class="tech-badge">LoRA</span>
+          <span class="tech-badge">MIMIC-III</span>
+          <span class="tech-badge">NLP</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <span class="project-status-badge active">Active Research</span>
+        <div class="project-links">
+          <a class="project-link" href="#" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-in" style="animation-delay:0.3s">
+      <div class="project-header">
+        <div class="project-icon"><i class="fas fa-database"></i></div>
+        <div class="project-title">Predictive Modelling for Patient Readmission</div>
+      </div>
+      <div class="project-body">
+        <p class="project-desc">Ensemble ML model predicting 30-day hospital readmission risk from structured EHR data, aiding hospital resource planning and preventive care.</p>
+        <div class="project-methodology">
+          <div class="project-methodology-label">Methodology</div>
+          <div class="project-methodology-text">Feature engineering on MIMIC-IV tabular data. Trained LightGBM, XGBoost, and logistic regression ensemble. Calibrated probabilities with isotonic regression. SHAP analysis used for feature attribution and clinician trust-building.</div>
+        </div>
+        <div class="project-tech">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">LightGBM</span>
+          <span class="tech-badge">XGBoost</span>
+          <span class="tech-badge">SHAP</span>
+          <span class="tech-badge">MIMIC-IV</span>
+        </div>
+      </div>
+      <div class="project-footer">
+        <span class="project-status-badge completed">Completed</span>
+        <div class="project-links">
+          <a class="project-link" href="#" title="GitHub"><i class="fab fa-github"></i></a>
+          <a class="project-link" href="#" title="Report"><i class="fas fa-file-pdf"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">Technical Competencies</div>
+  <h2 class="section-title">Skills & Tools</h2>
+  <div class="section-rule"></div>
+  <div class="skills-grid">
+
+    <div class="skill-group fade-in">
+      <div class="skill-group-title">ML & AI</div>
+      <div class="skill-list">
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">PyTorch</span><span class="skill-level">Advanced</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">TensorFlow / Keras</span><span class="skill-level">Advanced</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">Scikit-learn</span><span class="skill-level">Advanced</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">Hugging Face</span><span class="skill-level">Intermediate</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in" style="animation-delay:0.1s">
+      <div class="skill-group-title">Programming</div>
+      <div class="skill-list">
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">Python</span><span class="skill-level">Expert</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">NumPy / Pandas</span><span class="skill-level">Advanced</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">SQL</span><span class="skill-level">Intermediate</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">JavaScript / HTML</span><span class="skill-level">Intermediate</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="68"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in" style="animation-delay:0.2s">
+      <div class="skill-group-title">Research & Analysis</div>
+      <div class="skill-list">
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">Medical Image Analysis</span><span class="skill-level">Intermediate</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">Statistical Modelling</span><span class="skill-level">Intermediate</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">Scientific Writing</span><span class="skill-level">Intermediate</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">Literature Review</span><span class="skill-level">Advanced</span></div>
+          <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">Academic Background</div>
+  <h2 class="section-title">Education</h2>
+  <div class="section-rule"></div>
+  <div class="edu-list">
+
+    <div class="edu-item fade-in">
+      <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div>
+        <div class="edu-degree">BSc Computer Science with Honours & Research (Minor in Data Science)</div>
+        <div class="edu-school">MIE–Savitribai Phule Pune University, Doha Campus</div>
+        <div class="edu-meta">
+          <span class="edu-meta-item"><i class="fas fa-calendar"></i> August 2023 – June 2027</span>
+          <span class="edu-gpa"><i class="fas fa-star"></i> GPA: 9.75 / 10</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--ink-muted);margin-top:0.75rem;line-height:1.7">
+          Pursuing an Honours track with a dedicated research component. Core coursework covers algorithms, computer vision, machine learning, databases, and software engineering. Minor in Data Science focuses on statistical learning, data visualisation, and applied analytics.
+        </p>
+      </div>
+    </div>
+
+    <div class="edu-item fade-in" style="animation-delay:0.1s">
+      <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div>
+        <div class="edu-degree">Bachelor of Science (BS) in Data Science and Applications</div>
+        <div class="edu-school">Indian Institute of Technology, Madras (Online)</div>
+        <div class="edu-meta">
+          <span class="edu-meta-item"><i class="fas fa-calendar"></i> May 2024 – Present</span>
+          <span class="edu-gpa"><i class="fas fa-star"></i> GPA: 9.25 / 10</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--ink-muted);margin-top:0.75rem;line-height:1.7">
+          Rigorous online programme offered by one of India's premier technical institutions. Covers mathematics for data science, machine learning theory, deep learning, business analytics, and a capstone research project. Also serves as Python Programming Mentor for this programme.
+        </p>
+      </div>
+    </div>
+
+    <div class="edu-item fade-in" style="animation-delay:0.2s">
+      <div class="edu-icon"><i class="fas fa-school"></i></div>
+      <div>
+        <div class="edu-degree">High School Diploma (CBSE)</div>
+        <div class="edu-school">Birla Public School, Doha, Qatar</div>
+        <div class="edu-meta">
+          <span class="edu-meta-item"><i class="fas fa-calendar"></i> Completed March 2023</span>
+          <span class="edu-gpa"><i class="fas fa-star"></i> Score: 91%</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--ink-muted);margin-top:0.75rem;line-height:1.7">
+          Studied Physics, Chemistry, Mathematics, Computer Science, and English under the CBSE curriculum. Developed foundational computing and scientific reasoning skills that underpin current research pursuits.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Reach Out</div>
+  <h2 class="section-title">Get in Touch</h2>
+  <div class="section-rule"></div>
+  <div class="contact-grid">
+    <div>
+      <p style="font-size:0.95rem;color:var(--ink-soft);line-height:1.8;margin-bottom:1.75rem">
+        I'm open to research collaborations, internship opportunities, and academic discussions in AI, medical imaging, and data science. Don't hesitate to reach out.
+      </p>
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-value">shrinidhissm@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="contact-info-label">Phone</div>
+            <div class="contact-info-value">+974 3302 6293</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="contact-info-label">Location</div>
+            <div class="contact-info-value">Doha, Qatar</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <div class="contact-info-label">Response Time</div>
+            <div class="contact-info-value">Usually within 48 hours</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-card">
+      <form class="form">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input class="form-input" placeholder="Your name" type="text"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input class="form-input" placeholder="your@email.com" type="email"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <input class="form-input" placeholder="Research collaboration / Opportunity / Other" type="text"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell me about your project or inquiry…"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Mobile nav -->
+<nav class="mobile-nav">
+  <a href="#hero" class="active"><i class="fas fa-home"></i>Home</a>
+  <a href="#publications"><i class="fas fa-file-alt"></i>Research</a>
+  <a href="#experience"><i class="fas fa-briefcase"></i>Work</a>
+  <a href="#projects"><i class="fas fa-code-branch"></i>Projects</a>
+  <a href="#contact"><i class="fas fa-envelope"></i>Contact</a>
+</nav>
+
+<script>
+// Navigation active state
+const navLinks = document.querySelectorAll('.sidebar-nav .nav-link, .mobile-nav a');
+const sections = document.querySelectorAll('section[id]');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+sections.forEach(s => observer.observe(s));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Fade-in animations
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+// Skill bars
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.skill-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.skill-group').forEach(g => skillObserver.observe(g));
+
+// Contact form
+document.querySelector('.form').addEventListener('submit', e => {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+  btn.style.background = '#065f46';
+  setTimeout(() => {
+    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+});
+</script>
+</body>
+</html>
